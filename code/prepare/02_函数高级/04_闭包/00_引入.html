@@ -14,12 +14,18 @@
 -->
 <script type="text/javascript">
   var btns = document.getElementsByTagName('button')
-  /* //有问题
+  /* //有问题   var
   for(var i=0,length=btns.length;i<length;i++) {
     var btn = btns[i]
     btn.onclick = function () {
       alert('第'+(i+1)+'个')
     }
+  }*/
+/*  for (let i = 0,length = btns.length;i < length ;i++){
+      var btn = btns[i]
+      btn.onclick = function(){
+          alert(i+1)
+      }
   }*/
 
   //解决一: 保存下标
@@ -32,7 +38,7 @@
   }*/
 
   //解决办法: 利用闭包
-  for(var i=0,length=btns.length;i<length;i++) {
+  for(var i=0,length =btns.length;i<length;i++) {
     (function (i) {
       var btn = btns[i]
       btn.onclick = function () {

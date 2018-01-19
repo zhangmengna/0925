@@ -28,10 +28,10 @@
 -->
 <script type="text/javascript">
 
-  console.log(a1)
-  console.log(a2)
-  console.log(a3)
-  // console.log(a4)
+  console.log(a1) //undefined
+  console.log(a2) //undefined
+  console.log(a3)  // f
+//   console.log(a4)  没有定义报错
   console.log(this)
 
   var a1 = 3
@@ -42,20 +42,19 @@
     console.log('a3()')
   }
   a4 = 4
+//  console.log(a4)   4
 
 
   function fn(x, y) {
-    console.log(x, y)
-    console.log(b1)
-    console.log(b2)
-    console.log(arguments)
-    console.log(this)
-
+    console.log(x, y)  //undefined  undefined
+    console.log(b1)//undefined
+    console.log(b2)  //f
+    console.log(arguments)  //[callee: ƒ, Symbol(Symbol.iterator): ƒ]
+    console.log(this) //window
     // console.log(b3)
-
     var b1 = 5
-    function b2 () {
 
+    function b2 () {
     }
     b3 = 6
   }

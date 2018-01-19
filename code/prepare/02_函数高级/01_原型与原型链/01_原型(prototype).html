@@ -27,12 +27,13 @@
 
   // 2. 给原型对象添加属性(一般都是方法)
   function F() {
-
   }
   F.prototype.age = 12 //添加属性
   F.prototype.setAge = function (age) { // 添加方法
     this.age = age
   }
+ console.log( new F().age+"   teat")
+  //(new F).age 同上一样
   // 创建函数的实例对象
   var f = new F()
   console.log(f.age)

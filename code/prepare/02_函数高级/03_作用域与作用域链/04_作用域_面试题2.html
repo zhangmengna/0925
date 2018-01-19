@@ -11,16 +11,18 @@
    */
 
   var fn = function () {
-    console.log(fn)
+    console.log(fn)   //ƒ () { console.log(fn) }
   }
   fn()
 
   var obj = {
-    fn2: function () {
+//    fn2: function () {
+      fn2 : function fn2() {
+
       console.log(fn2)
     }
   }
-  obj.fn2()
+  obj.fn2()  // 第一种情况  fn2 is not defined
 </script>
 </body>
 </html>

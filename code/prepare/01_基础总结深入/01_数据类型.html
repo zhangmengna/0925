@@ -43,7 +43,9 @@
 
   a = null
   console.log(a===null) // true
-  console.log(typeof a) // 'object'
+  console.log(typeof a) // object
+
+  console.log(typeof null)// object
 
   console.log('--------------------------------')
 
@@ -59,7 +61,8 @@
   console.log(b1.b3 instanceof Function, typeof b1.b3) // true 'function'
 
   console.log(typeof b1.b2[2]) // 'function'
-  console.log(b1.b2[2]('abc')) // 'abc' undefined
+  console.log(b1.b2[2]('abc')) // abc  console.log(abc)  --> undefined
+  console.log(b1.b2[2]('cc'))
 </script>
 
 </body>
