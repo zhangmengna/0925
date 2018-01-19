@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>面试题_综合</title>
+</head>
+<body>
+<script type="text/javascript">
+  function Foo() {
+    getName = function () { console.log(1); };
+//    console.log(this)
+    return this;
+  }
+  Foo.getName = function () {console.log(2);};
+  Foo.prototype.getName = function () { console.log(3);};
+  var getName = function () { console.log(4);};
+  function getName() {console.log(5);}
+//先预处理函数再预处理变量 17被16覆盖
+  //请写出以下输出结果：
+  Foo.getName();// 2  ---13
+  getName(); //4 ---15
+  Foo().getName();//1 ---10
+  getName(); // 1 由于上面的执行将this返回指向window
+  new Foo.getName(); //2
+  new Foo().getName(); //3
+  new new Foo().getName() //3
+//  [!!!new [!![!new Foo()!].getName!!]()!!!];
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07_面试题1</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  /*
+   说说它们的输出情况
+   */
+
+  //代码片段一
+  var name = "The Window";
+  var object = {
+    name: "My Object",
+    getNameFunc: function () {
+        console.log(this) //{name: "My Object", getNameFunc: ƒ}
+      return function () {
+          console.log(this)//指向window
+        return this.name;
+      };
+    }
+  };
+  console.log(object.getNameFunc()());  //The Window
+//看函数再那个范围执行，此时function返回后在全局内执行this指向window
+
+  //代码片段二
+  var name2 = "The Window";
+  var object2 = {
+    name2: "My Object",
+    getNameFunc: function () {
+      var that = this;
+      console.log(this)// this指向object2   {name2: "My Object", getNameFunc: ƒ}
+      return function () {
+        return that.name2;
+      };
+    }
+  };
+  console.log(object2.getNameFunc()()); // My Object
+</script>
+</body>
+</html>
